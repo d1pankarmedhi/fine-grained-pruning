@@ -140,7 +140,7 @@ Epoch 4 Accuracy 52.70% / Best Accuracy: 52.70%
 Epoch 5 Accuracy 55.97% / Best Accuracy: 55.97%
 ```
 
-Original model was underfitting, probably due to its complexity. Reducing the parameters and complexity has helped the model learn better and fit to the data.
+Original model was probably overfitting due to its complexity. Reducing the parameters and complexity has helped the model learn better and fit to the data.
 
 ### Result
 
