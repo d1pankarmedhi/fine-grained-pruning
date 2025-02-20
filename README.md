@@ -8,8 +8,6 @@
 
 This repository provides a practical implementation of fine-grained magnitude-based pruning for a ResNet-like Convolutional Neural Network (CNN) in PyTorch. The goal is to demonstrate and explore model compression techniques to significantly reduce model size and computational cost while maintaining acceptable accuracy levels.
 
-`MIT Hanlab TinyML and Efficient Deep Learning Computation Course`
-
 **Key Features:**
 
 - **ResNet-like Architecture:** Implements a ResNet-inspired CNN tailored for CIFAR-10 image classification.
