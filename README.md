@@ -83,52 +83,43 @@ Model trained on **CIFAR-10** dataset for for 50 epochs achieving accuracy of _4
 
 **Fine grained pruning:** It is a pruning technique that mostly focuses on selectively removing individual parameters from a model across different layers. You can also refer to this as _Unstructured Pruning_.
 
-| p 1  | p 2  | p 3  |
-| ---- | ---- | ---- |
-| 0.6  | -0.2 | 0.8  |
-| -0.1 | 0.5  | -0.4 |
-| 0.7  | -0.9 | 0.3  |
-
-| p 1     | p 2     | p 3     |
-| ------- | ------- | ------- |
-| 0.6     | **0.0** | 0.8     |
-| **0.0** | 0.5     | **0.0** |
-| 0.7     | -0.9    | 0.3     |
-
 **Layer Sensitivity:** Layer sensitivity shows how each layer performs for different sparsity ratios. Depending upon the change in the accuracy, the sparsity ratio for the respective layer is set.
 
 <img src = "https://github.com/user-attachments/assets/63a5043a-33bf-40ab-8f71-663bedbe371e">
 
 ```python
-{'backbone.conv0.weight': 0.0,
- 'backbone.conv1.weight': 0.6,
- 'backbone.residual_block0.conv1.weight': 0.8,
- 'backbone.residual_block0.conv2.weight': 0.8,
- 'backbone.conv2.weight': 0.6,
- 'backbone.conv3.weight': 0.7,
- 'backbone.residual_block1.conv1.weight': 0.8,
- 'backbone.residual_block1.conv2.weight': 0.9,
- 'backbone.conv4.weight': 0.7,
- 'backbone.conv5.weight': 0.7,
- 'backbone.residual_block2.conv1.weight': 0.9,
- 'backbone.residual_block2.conv2.weight': 0.9,
- 'backbone.conv6.weight': 0.7,
- 'backbone.conv7.weight': 0.8,
- 'backbone.residual_block3.conv1.weight': 0.8,
- 'backbone.residual_block3.conv2.weight': 0.8,
- 'classifier.weight': 0.0}
+# sparsity ratio
+{
+    'backbone.conv0.weight': 0.0,
+    'backbone.conv1.weight': 0.6,
+    'backbone.residual_block0.conv1.weight': 0.8,
+    'backbone.residual_block0.conv2.weight': 0.8,
+    'backbone.conv2.weight': 0.6,
+    'backbone.conv3.weight': 0.7,
+    'backbone.residual_block1.conv1.weight': 0.8,
+    'backbone.residual_block1.conv2.weight': 0.9,
+    'backbone.conv4.weight': 0.7,
+    'backbone.conv5.weight': 0.7,
+    'backbone.residual_block2.conv1.weight': 0.9,
+    'backbone.residual_block2.conv2.weight': 0.9,
+    'backbone.conv6.weight': 0.7,
+    'backbone.conv7.weight': 0.8,
+    'backbone.residual_block3.conv1.weight': 0.8,
+    'backbone.residual_block3.conv2.weight': 0.8,
+    'classifier.weight': 0.0
+}
 ```
 
 Pruning results in reduced model complexity and size.
 
 ```
 Original model size: 76.85 MiB
-Sparse model size: 16. 16 MiB
+Sparse model size: 16. 16 MiB (4.76x smaller)
 ```
 
 ### Fine Tuning
 
-Fine tuning model with less than 10 epochs has recovered the model accuracy, surpassing the original accuracy.
+Fine tuning model for 5 epochs has recovered the model accuracy, surpassing the original accuracy.
 
 ```
 Finetuning Fine-grained Pruned Sparse Model
