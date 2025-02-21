@@ -16,10 +16,6 @@ This repository provides a practical implementation of fine-grained magnitude-ba
 - **Comprehensive Evaluation:** Provides metrics for model size reduction, sparsity, and accuracy, allowing for a thorough understanding of the pruning impact.
 - **Fine-tuning for Recovery:** Implements fine-tuning techniques to recover accuracy lost due to pruning, balancing compression and performance.
 
-### Dataset
-
-The code automatically downloads the CIFAR-10 dataset to the `data/cifar10` directory upon the first run.
-
 ## Experiment
 
 ### Model
